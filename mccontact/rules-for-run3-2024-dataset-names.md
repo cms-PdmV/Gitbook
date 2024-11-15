@@ -8,22 +8,28 @@ The same rules apply also for 2022 and 2023 Run 3 re-reco campaigns (`RunIII2022
 ### **Naming : PROCESS\_[BINNING]\_[FILTER]\_[PARAMETERS]\_TUNE\_BEAME\_ME-PS**
 
 * **PROCESS** : DY, Z, W, TT, T, WW, WZ, ZZ, QCD, ...
-* **BINNING** : Bin-MLL-XtoX, Bin-HT-XtoX, Bin-XJ, …
-* **FILTER** : Fil-EMEnriched, Fil-MuEnriched, Fil-BEnriched, …
+* **BINNING** : Bin-MLL-XtoX, Bin-HT-XtoX, Bin-XJ, ...
+* **FILTER** : Fil-EMEnriched, Fil-MuEnriched, Fil-BEnriched, ...
 * **PARAMETERS** : Par-MH-125, ...
 * **TUNE** : TuneCPX
 * **BEAME** : 13p6TeV
 * **ME-PS** : madgraphMLM-pythia8, powheg-pythia8, amcatnloFXFX-pythia8 (generator names in lower cases and merging schemes in upper cases)
 
 The dataset name structure must respect the following rules:
-- The blocks PROCESS, TUNE, BEAME and ME-PS are mandatory. Every dataset name must contain these blocks.
-- The blocks BINNING, FILTER, and PARAMETERS are optional. The name can contain none, one, two, or all of them, depending on the physics process.
-- The `_` (underscore) must be used **ONLY** to separate the main blocks of the dataset name.
-- The `-` (dash) can be used to separate strings within a given block.
-- The `Bin-` header must be pesent at the beginning of the BINNING block.
-- The `Fil-` header must be pesent at the beginning of the FILTER block.
-- The `Par-` header must be pesent at the beginning of the PARAMETERS block.
 
+* The blocks PROCESS, TUNE, BEAME and ME-PS are mandatory. Every dataset name must contain these blocks.
+
+* The blocks BINNING, FILTER, and PARAMETERS are optional. The name can contain none, one, two, or all of them, depending on the physics process.
+
+* The `_` (underscore) must be used **ONLY** to separate the main blocks of the dataset name.
+
+* The `-` (dash) can be used to separate strings within a given block.
+
+* The `Bin-` header must be pesent at the beginning of the BINNING block.
+
+* The `Fil-` header must be pesent at the beginning of the FILTER block.
+
+* The `Par-` header must be pesent at the beginning of the PARAMETERS block.
 
 ### **Particle** Acronyms
 
@@ -51,16 +57,21 @@ Specify the process we are producing.
 To unify this part we suggest to use the following conventions:
 
 * all 'particles' start with capital letters, followed by minor letters, e.g. `W, Z, Mu, Tau, E, Nu, Wplus, H, Jets, Tbar, B, Bbar`
+
 * if a specific decay is simulated, this is specified using the keyword `to`, e.g. `WtoENu, HtoWWto2L2Nu`
+
 * initial state particles are only specified if needed to distinguish between other processes, e.g. `GluGluToWW` with respect to `WW`
+
 * charge fo a particle is only specified if relevant, i.e. use `Wplus` if only W+ is in the sample, but **don't use** `WplusWminus` for W-pair production
+
 * the same for anti-particles: use `Tbar` if only anti-top is in the sample, but **don't use** `TTbar`, but rather `TT`
+
 * if one one part of the process name there is a) more then one particle of the same kind **and** b) more then two particles in total, use `2E2Nu` rather then `EENuNu`
 
 <span style="color:blue;">**Always using number if more than one same particle, and arrange in alphabetical order**</span>
 
 * Using **DYto2L** instead of DYtoLL
-* Usng **WtoLNu and WtoQQ** to distinguish decay of W boson
+* Using **WtoLNu and WtoQQ** to distinguish decay of W boson
 * Using **TT** instead of TTbar
 * Using **TtoLNu and TbartoLNu** to distinguish top and anti-top
 * Using **WWto2L2Nu** instead of WWtoLLNuNu (or WWto2Nu2L)
@@ -92,7 +103,6 @@ If sample is binned in multiple variables, separate the various parts with `-` a
 
 <span style="color:red;">N.B.:The only exception to this rule is for jet bins (for historical reasons). In this case you should use the format `Bin-0J`, `Bin-1J`, ...</span>
 
-
 ### **FILTER**
 
 The format is: <span style="color:blue;">**Fil-FILTER1-FILTER2**</span>
@@ -103,22 +113,20 @@ Some complicated cases:
 
 * `DYto2L-4Jets\_Fil-BEnriched`: GEN filter requiring for b quarks from parton shower (maximum jet multiplicity is 4 in LHE level )
 
-
 ### **PARAMETERS**
 
 The format is: <span style="color:blue;">**Par-PARAMETER1-VALUE1-PARAMETER2-VALUE2**</span>
 
-This is used to identify the values (NB: not the ranges, for which we use BINNING) of some relevant parameters in the physics process, such as the mass of the Higgs boson, Z', ... 
+This is used to identify the values (NB: not the ranges, for which we use BINNING) of some relevant parameters in the physics process, such as the mass of the Higgs boson, Z', ...
 
 If more than one parameter is used, separate them with `-` and list parameters in alphabetical order, e.g. `Par-ctau-100cm-M-1000GeV`.
-
 
 ### **TUNE**
 
 The format is: <span style="color:blue;">**TuneCPX**</span> with X between 1 and 5.
 
-- Tunes CP1 and CP2 are LO tunes and go along with LO PDF sets (NNPDF3.1 LO - \alpha_s = 0.130)
-- Tunes CP3, CP4, CP5 are NLO tunes and go along with NLO PDF sets (NNPDF3.1 N(N)LO - \alpha_s = 0.180)
+* Tunes CP1 and CP2 are LO tunes and go along with LO PDF sets (NNPDF3.1 LO - \alpha_s = 0.130)
+* Tunes CP3, CP4, CP5 are NLO tunes and go along with NLO PDF sets (NNPDF3.1 N(N)LO - \alpha_s = 0.180)
 
 ### BEAME
 
@@ -128,7 +136,7 @@ This is fixed and must not be changed for Run3 pp collisions.
 
 ### ME-PS
 
-The generators to be used are:​
+The generators to be used are:
 
 | Pythia6                                                   | `pythia6`          |
 | --------------------------------------------------------- | ------------------ |
