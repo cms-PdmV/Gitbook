@@ -159,6 +159,8 @@ If there are specialized decay tool used, please append this to the name, e.g. i
 
 When madspin is used, please append to the name, e.g.: `powheg-madspin-pythia8`,  `madgraph-madspin-pythia8`.
 
+When merging methods are used in MadGraph/MG5\_aMC@NLO, the generator name should be `madgraphMLM` for LO and `amcatnloFXFX` for NLO.
+
 ### Some full examples
 
 This is a list of examples, comparing OLD (not ok) and NEW names (following the current rules).
