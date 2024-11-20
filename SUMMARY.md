@@ -12,6 +12,7 @@
 * [Monte Carlo contact's corner](mccontact/README.md)
   * [Rules for dataset names](mccontact/rules-for-dataset-names.md)
   * [Rules for Run3 dataset names](mccontact/rules-for-run3-dataset-names.md)
+  * [Rules for Run3 2024 dataset names](mccontact/rules-for-run3-2024-dataset-names.md)
   * [How to create a new ticket](mccontact/how-to-create-a-new-ticket.md)
   * [High priority requests](mccontact/high-priority-requests.md)
   * [Scripting in McM](mccontact/scripting-in-mcm.md)
