@@ -82,7 +82,7 @@ To unify this part we suggest to use the following conventions:
 * Using **WZto3LNu** instead of WZtoLNu2L
 * Using **WWto4Q** instead of WWto2Q2Q
 
-**IMPORTANT**: Use the `Jet` keyword with caution. We're operating a hadron collider, there are jets all over the place. We propose to use it only if there are matrix elements in the generation that explicitly include the higher QCD multiplicity diagrams, i.e. MadGraph, Alpgen and Sherpa, and some matching procedure had/has to be applied. From this definition the keyword `Jet` should never appear in a leading order MC generator sample. If there are cuts on pthat, this should be indicated using the dedicated keywords. A an example `ZJet` in Pythia6, which is nothing but Z production with a cut on pthat of the hard interaction should become `Z`, or `ZmumuJet` simply `ZToMuMu`. In case of decay products, e.g. RS Gravitons decaying into quarks and gluons, use the keyword `J`, e.g. `RSGravToJJ`.
+**IMPORTANT**: Use the `Jet` keyword with caution. We're operating a hadron collider, there are jets all over the place. We propose to use it only if there are matrix elements in the generation that explicitly include the higher QCD multiplicity diagrams, i.e. MadGraph, Alpgen and Sherpa, and some matching procedure had/has to be applied. If there are cuts on pthat, this should be indicated using the dedicated keywords. A an example `ZJet` in Pythia6, which is nothing but Z production with a cut on pthat of the hard interaction should become `Z`, or `ZmumuJet` simply `ZToMuMu`. In case of decay products, e.g. RS Gravitons decaying into quarks and gluons, use the keyword `J`, e.g. `RSGravToJJ`.
 
 ### **BINNING**
 
@@ -99,7 +99,7 @@ Other binning cases are trivial, e.g., DYto2L-4Jets\_Bin-MLL-60to90, DYto2L-4Jet
 
 For bins without an upper boundary no need to add `Inf`: e.g. `600toInf` should be `600` directly.
 
-If sample is binned in multiple variables, separate the various parts with `-` and list bins in alphabetical order, e.g. `Bin-HT-100to400-MLL-50to120`.
+If sample is binned in multiple variables, separate the various parts with `-` and list bins with numbers and then alphabetical order, e.g. `Bin-HT-100to400-MLL-50to120`, `Bin-1J-MLL-50to120`.
 
 <span style="color:red;">N.B.:The only exception to this rule is for jet bins (for historical reasons). In this case you should use the format `Bin-0J`, `Bin-1J`, ...</span>
 
