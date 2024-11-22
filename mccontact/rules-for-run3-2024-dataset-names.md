@@ -99,7 +99,7 @@ Other binning cases are trivial, e.g., DYto2L-4Jets\_Bin-MLL-60to90, DYto2L-4Jet
 
 For bins without an upper boundary no need to add `Inf`: e.g. `600toInf` should be `600` directly.
 
-If sample is binned in multiple variables, separate the various parts with `-` and list bins with numbers and then alphabetical order, e.g. `Bin-HT-100to400-MLL-50to120`, `Bin-1J-MLL-50to120`.
+If sample is binned in multiple variables, separate the various parts with `-` and list the bins. The bins should be first ordered with number of jets (if it is binned in number of jets) and then the rest should be listed in alphabetical order, e.g. `Bin-HT-100to400-MLL-50to120`, `Bin-1J-MLL-50to120`.
 
 <span style="color:red;">N.B.:The only exception to this rule is for jet bins (for historical reasons). In this case you should use the format `Bin-0J`, `Bin-1J`, ...</span>
 
