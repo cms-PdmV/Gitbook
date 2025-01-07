@@ -172,7 +172,6 @@ When merging/matching methods are used in in MadGraph/MG5\_aMC@NLO, POWHEG or Sh
 | POWHEG + MiNLO method                                     | `powhegMINLO`      |
 | POWHEG + MiNNLO method                                    | `powhegMINNLO`     |
 | Sherpa + MEPS merging                                     | `sherpaMEPS`       |
-| --------------------------------------------------------- | ------------------ |
 
 
 
