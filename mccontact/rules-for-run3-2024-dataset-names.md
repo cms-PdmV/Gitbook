@@ -164,12 +164,11 @@ If there are specialized decay tools used, please append this to the name, e.g. 
 When madspin is used, please append to the name, e.g.: `powheg-madspin-pythia8`,  `madgraph-madspin-pythia8`.
 
 When merging/matching methods are used in in MadGraph/MG5\_aMC@NLO, POWHEG or Sherpa, please refer to the following table:
-in MadGraph/MG5\_aMC@NLO, the generator name should be `madgraphMLM` for LO and `amcatnloFXFX` for NLO.
 
 | GENERATOR                                                 | NAME               |
 | --------------------------------------------------------- | ------------------ |
 | MadGraph5\_aMC@NLO (LO) + MLM merging                     | `madgraphMLM`      |
-| MadGraph5\_aMC@NLO (NLO) + FxFx merging                   | `madgraphFXFX`     |
+| MadGraph5\_aMC@NLO (NLO) + FxFx merging                   | `amcatnloFXFX`     |
 | POWHEG + MiNLO method                                     | `powhegMINLO`      |
 | POWHEG + MiNNLO method                                    | `powhegMINNLO`     |
 | Sherpa + MEPS merging                                     | `sherpaMEPS`       |
