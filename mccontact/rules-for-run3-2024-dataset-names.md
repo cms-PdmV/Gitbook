@@ -123,10 +123,14 @@ If more than one parameter is used, separate them with `-` and list parameters i
 
 ### **TUNE**
 
-The format is: <span style="color:blue;">**TuneCPX**</span> with X between 1 and 5.
+When using Pythia8, the format is: <span style="color:blue;">**TuneCPX**</span> with X between 1 and 5.
 
 * Tunes CP1 and CP2 are LO tunes and go along with LO PDF sets (NNPDF3.1 LO - \alpha_s = 0.130)
 * Tunes CP3, CP4, CP5 are NLO tunes and go along with NLO PDF sets (NNPDF3.1 N(N)LO - \alpha_s = 0.180)
+
+When using Herwig7, the tune is CH3 and the format is <span style="color:blue;">**TuneCH3**</span>.
+
+When using Sherpa, we currently use the default tune from Sherpa authors and the format is <span style="color:blue;">**TuneSherpaDef**</span>.
 
 ### BEAME
 
