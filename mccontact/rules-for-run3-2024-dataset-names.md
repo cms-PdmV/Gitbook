@@ -111,7 +111,7 @@ If more than one filter is used, separate them with `-` and list filters in alph
 
 Some complicated cases:
 
-* `DYto2L-4Jets\_Fil-BEnriched`: GEN filter requiring for b quarks from parton shower (maximum jet multiplicity is 4 in LHE level )
+* `DYto2L-4Jets_Fil-BEnriched`: GEN filter requiring for b quarks from parton shower (maximum jet multiplicity is 4 in LHE level )
 
 ### **PARAMETERS**
 
@@ -123,10 +123,14 @@ If more than one parameter is used, separate them with `-` and list parameters i
 
 ### **TUNE**
 
-The format is: <span style="color:blue;">**TuneCPX**</span> with X between 1 and 5.
+When using Pythia8, the format is: <span style="color:blue;">**TuneCPX**</span> with X between 1 and 5.
 
 * Tunes CP1 and CP2 are LO tunes and go along with LO PDF sets (NNPDF3.1 LO - \alpha_s = 0.130)
 * Tunes CP3, CP4, CP5 are NLO tunes and go along with NLO PDF sets (NNPDF3.1 N(N)LO - \alpha_s = 0.180)
+
+When using Herwig7, the tune is CH3 and the format is <span style="color:blue;">**TuneCH3**</span>.
+
+When using Sherpa, we currently use the default tune from Sherpa authors and the format is <span style="color:blue;">**TuneSherpaDef**</span>.
 
 ### BEAME
 
@@ -138,9 +142,10 @@ This is fixed and must not be changed for Run3 pp collisions.
 
 The generators to be used are:
 
-| Pythia6                                                   | `pythia6`          |
+| GENERATOR                                                 | NAME               |
 | --------------------------------------------------------- | ------------------ |
 | Pythia8                                                   | `pythia8`          |
+| Pythia6                                                   | `pythia6`          |
 | Herwig6                                                   | `herwig6`          |
 | Herwig++                                                  | `herwigpp`         |
 | Herwig7                                                   | `herwig7`          |
@@ -151,15 +156,28 @@ The generators to be used are:
 | Alpgen                                                    | `alpgen`           |
 | MC@NLO                                                    | `mcatnlo`          |
 | POWHEG                                                    | `powheg`           |
+| POWHEG **e.g. showered with Pythia8**                     | `powheg-pythia8`   |
+| JHUGen                                                    | `JHUGen`           |
+| POWHEG+JHUGen                                             | `powheg-JHUGen`    |
 | HARDCOL                                                   | `hardcol`          |
 | BCVEGPY 2                                                 | `bcvegpy2`         |
 | ...                                                       | ...                |
 
-If there are specialized decay tool used, please append this to the name, e.g. if EvtGen was used after Pythia8, use `...pythia8-evtgen, ...pythia8-tauola, ...pythia8-photos`
+If there are specialized decay tools used, please append this to the name, e.g. if EvtGen was used after Pythia8, use `...pythia8-evtgen, ...pythia8-tauola, ...pythia8-photos`.
 
 When madspin is used, please append to the name, e.g.: `powheg-madspin-pythia8`,  `madgraph-madspin-pythia8`.
 
-When merging methods are used in MadGraph/MG5\_aMC@NLO, the generator name should be `madgraphMLM` for LO and `amcatnloFXFX` for NLO.
+When merging/matching methods are used in in MadGraph/MG5\_aMC@NLO, POWHEG or Sherpa, please refer to the following table:
+
+| GENERATOR                                                 | NAME               |
+| --------------------------------------------------------- | ------------------ |
+| MadGraph5\_aMC@NLO (LO) + MLM merging                     | `madgraphMLM`      |
+| MadGraph5\_aMC@NLO (NLO) + FxFx merging                   | `amcatnloFXFX`     |
+| POWHEG + MiNLO method                                     | `powhegMINLO`      |
+| POWHEG + MiNNLO method                                    | `powhegMINNLO`     |
+| Sherpa + MEPS merging                                     | `sherpaMEPS`       |
+
+
 
 ### Some full examples
 
@@ -181,13 +199,13 @@ This is a list of examples, comparing OLD (not ok) and NEW names (following the 
 * <span style="color:green;"> NEW</span>: B0ToK0sMuMu_Fil-K0s-Mu_TuneCP5_13p6TeV_pythia8-evtgen
 
 * <span style="color:red;"> OLD</span>:   DYBto2LB-4Jets_MLL-120_HT-100to400_TuneCP5_13p6TeV_madgraphMLM-pythia8  
-* <span style="color:green;"> NEW</span>: DYBto2LB-4Jets_Bin-HT100to400-MLL-120_TuneCP5_13p6TeV_madgraphMLM-pythia8
+* <span style="color:green;"> NEW</span>: DYBto2LB-4Jets_Bin-HT-100to400-MLL-120_TuneCP5_13p6TeV_madgraphMLM-pythia8
 
 * <span style="color:red;"> OLD</span>:   DYto2L-2Jets_MLL-50_0J_TuneCP5Down_13p6TeV_amcatnloFXFX-pythia8
 * <span style="color:green;"> NEW</span>: DYto2L-2Jets_Bin-0J-MLL-50_TuneCP5Down_13p6TeV_amcatnloFXFX-pythia8
 
 * <span style="color:red;"> OLD</span>:   DYto2L-4Jets_MLL-50to120_HT-100to400_TuneCP5_13p6TeV_madgraphMLM-pythia8
-* <span style="color:green;"> NEW</span>: DYto2L-4Jets_Bin-HT100to400-MLL-50to120_TuneCP5_13p6TeV_madgraphMLM-pythia8
+* <span style="color:green;"> NEW</span>: DYto2L-4Jets_Bin-HT-100to400-MLL-50to120_TuneCP5_13p6TeV_madgraphMLM-pythia8
 
 * <span style="color:red;"> OLD</span>:   RPVStopStopToJets_UDD323_M-700_TuneCP5_13p6TeV-madgraphMLM-pythia8
 * <span style="color:green;"> NEW</span>: RPVStopStoptoJets_Par-M-700_UDD323_TuneCP5_13p6TeV_madgraphMLM-pythia8
@@ -196,7 +214,7 @@ This is a list of examples, comparing OLD (not ok) and NEW names (following the 
 * <span style="color:green;"> NEW</span>: SUEP_Par-mDark-2-mMed-125-temp-0p5_decayGeneric_14TeV-pythia8
 
 * <span style="color:red;"> OLD</span>:   WminusH_Wto2Q_Hto2G_M-125_TuneCP5_13p6TeV_powheg-minlo-HWJ-pythia8
-* <span style="color:green;"> NEW</span>: WminusH-Wto2Q-Hto2G_Par-M-125_TuneCP5_13p6TeV_powheg-minlo-HWJ-pythia8
+* <span style="color:green;"> NEW</span>: WminusH-Wto2Q-Hto2G_Par-M-125_TuneCP5_13p6TeV_powhegMINLO-pythia8
 
 * <span style="color:red;"> OLD</span>:   TtoLNu-2Jets_s-channel_TuneCP5_13p6TeV_amcatnloFXFX-pythia8
 * <span style="color:green;"> NEW</span>: TtoLNu-2Jets-schannel_TuneCP5_13p6TeV_amcatnloFXFX-pythia8
