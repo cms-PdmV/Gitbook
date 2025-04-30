@@ -157,8 +157,8 @@ The generators to be used are:
 | MC@NLO                                                    | `mcatnlo`          |
 | POWHEG                                                    | `powheg`           |
 | POWHEG **e.g. showered with Pythia8**                     | `powheg-pythia8`   |
-| JHUGen                                                    | `JHUGen`           |
-| POWHEG+JHUGen                                             | `powheg-JHUGen`    |
+| JHUGen                                                    | `jhugen`           |
+| POWHEG+JHUGen                                             | `powheg-jhugen`    |
 | HARDCOL                                                   | `hardcol`          |
 | BCVEGPY 2                                                 | `bcvegpy2`         |
 | ...                                                       | ...                |
@@ -193,7 +193,7 @@ This is a list of examples, comparing OLD (not ok) and NEW names (following the 
 * <span style="color:green;"> NEW</span>: B0ToJpsiK0s-JMM_Fil-BMu_Par-DGamma-0_SoftQCDnonD_TuneCP5_13p6TeV_pythia8-evtgen
 
 * <span style="color:red;"> OLD</span>:   bbH_Hto2Zto4L_M-125_TuneCP5_13p6TeV_JHUGenV752-pythia8
-* <span style="color:green;"> NEW</span>: BBH-Hto2Zto4L_Par-M-125_TuneCP5_13p6TeV_JHUGenV752-pythia8
+* <span style="color:green;"> NEW</span>: BBH-Hto2Zto4L_Par-M-125_TuneCP5_13p6TeV_jhugen-pythia8
 
 * <span style="color:red;"> OLD</span>:   B0ToK0sMuMu_MuFilter_K0sFilter_TuneCP5_13p6TeV_pythia8-evtgen
 * <span style="color:green;"> NEW</span>: B0ToK0sMuMu_Fil-K0s-Mu_TuneCP5_13p6TeV_pythia8-evtgen
